@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "ChatArea";
+}
+
+<h2>ChatArea</h2>
+
+<div class="container">
+    <div id="chatGroups">
+
+    </div>
+
+    <div id="discussion">
+
+    </div>
+
+    <div class="chatSender">
+        <input type="text" id="message" />
+        <input type="button" id="sendmessage" value="Send" />
+        @Html.Hidden("displayName", User.Identity.Name.ToString(), new { @id = "displayName" })
+    </div>
+</div>
+
+@section scripts {
+<script src="~/Scripts/jquery.signalR-2.2.0.min.js"></script>
+<script src="~/signalr/hubs"></script>
+
+    <script>
+        $(function () {
+            var chat = $.connection.chatHub;
+            // Create a function that the hub can call back to display messages.
+            chat.client.SendMessage = function (from, name, message) {
+                var allMsg = $("#discussion"),
+                    userSelect = $("#chatGroups");
+
+                if(userSelect.find("#"+from).length == 0) {
+                    userSelect.append("<div id='" + from + "'>" + from + "</div>");
+                    allMsg.append("<div id='" + from + "'><span class='message'>"+ htmlEncode(message)+"</span><span class='sentFrom'>"+name+"</span></div>");
+                } else {
+                    allMsg.find("#" + from).append("<div class='message'>" + htmlEncode(message) + "<span class='sentFrom'>" + name + "</span></div>");
+                }
+            };
+
+            $('#message').focus();
+
+            $.connection.hub.start().done(function () {
+                $('#sendmessage').click(function () {
+                    // Call the Send method on the hub. 
+                    chat.server.send("hornerb", $('#displayName').val(), $('#message').val());
+                    // Clear text box and reset focus for next comment. 
+                    $('#message').val('').focus();
+                });
+            });
+        });
+
+        function htmlEncode(value) {
+            var encodedValue = $('<div />').text(value).html();
+            return encodedValue;
+        }
+    </script>
+}

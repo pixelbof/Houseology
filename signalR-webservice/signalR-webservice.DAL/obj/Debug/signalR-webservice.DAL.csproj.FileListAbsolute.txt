@@ -1,0 +1,10 @@
+c:\users\hornerb\documents\visual studio 2013\Projects\signalR-webservice\signalR-webservice.DAL\bin\Debug\signalR-webservice.DAL.dll.config
+c:\users\hornerb\documents\visual studio 2013\Projects\signalR-webservice\signalR-webservice.DAL\bin\Debug\signalR-webservice.DAL.dll
+c:\users\hornerb\documents\visual studio 2013\Projects\signalR-webservice\signalR-webservice.DAL\bin\Debug\signalR-webservice.DAL.pdb
+c:\users\hornerb\documents\visual studio 2013\Projects\signalR-webservice\signalR-webservice.DAL\bin\Debug\EntityFramework.dll
+c:\users\hornerb\documents\visual studio 2013\Projects\signalR-webservice\signalR-webservice.DAL\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\hornerb\documents\visual studio 2013\Projects\signalR-webservice\signalR-webservice.DAL\bin\Debug\EntityFramework.xml
+c:\users\hornerb\documents\visual studio 2013\Projects\signalR-webservice\signalR-webservice.DAL\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\hornerb\documents\visual studio 2013\Projects\signalR-webservice\signalR-webservice.DAL\obj\Debug\signalR-webservice.DAL.csprojResolveAssemblyReference.cache
+c:\users\hornerb\documents\visual studio 2013\Projects\signalR-webservice\signalR-webservice.DAL\obj\Debug\signalR-webservice.DAL.dll
+c:\users\hornerb\documents\visual studio 2013\Projects\signalR-webservice\signalR-webservice.DAL\obj\Debug\signalR-webservice.DAL.pdb
